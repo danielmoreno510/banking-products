@@ -1,0 +1,50 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.card{
+  width: calc(25% - 12px);
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.banner {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.banner-card {
+  padding: 30px;
+}
+
+.text {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+@media (max-width: 1190px) {
+  .card{
+    width: calc(33.333% - 12px);
+    margin-bottom: 20px;
+    display: flex;
+  }
+}
+
+@media (max-width: 960px) {
+  .card{
+    width: calc(50% - 12px);
+    margin-bottom: 20px;
+    display: flex;
+  }
+}
+
+@media (max-width: 500px) {
+  .card{
+    width: calc(100% - 12px);
+    margin-bottom: 20px;
+    display: flex;
+  }
+}

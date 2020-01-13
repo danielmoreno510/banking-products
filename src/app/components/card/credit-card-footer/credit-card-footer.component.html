@@ -1,0 +1,22 @@
+<div *ngIf="product.paymentDate; else paymentDate">
+  <div class="terms" style="margin-top: 18px;">
+    <div style="font-weight: 500">Pago Total:&nbsp;</div>
+    <div style="font-weight: 500">{{amount(product.productAccountBalances.valor_pago_minimo.amount)}}</div>
+  </div>
+  <div class="terms">
+    <div style="font-weight: 500">Fecha de pago:&nbsp;</div>
+    <div style="font-weight: 500">{{date(product.paymentDate)}}</div>
+  </div>
+  <button (click)="onLogin.emit()" mat-raised-button color="primary" class="pay-button">PAGAR</button>
+</div>
+<ng-template #paymentDate>
+  <div class="terms" style="margin-top: 18px;">
+    <div style="font-weight: 500">Fecha de corte:&nbsp;</div>
+    <div style="font-weight: 500">{{date(product.dueDate)}}</div>
+  </div>
+  <div class="terms" style="margin-top: 18px;">
+    <div style="font-weight: 500">Total gastado:&nbsp;</div>
+    <div style="font-weight: 500">{{amount(product.productAccountBalances.pago_total_pesos.amount)}}</div>
+  </div>
+  <mat-progress-bar class="progress" mode="determinate" value="40"></mat-progress-bar>
+</ng-template>

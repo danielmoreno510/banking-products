@@ -1,0 +1,27 @@
+<div *ngIf="product.lastTransactionDate">
+  <h4 class="title">Fecha de la Ultima Transaccion:</h4>
+  <div>{{product.lastTransactionDate}}</div>
+</div>
+
+<div *ngIf="product.accountInformation.bank">
+  <h4 class="title">Banco:</h4>
+  <div>{{product.accountInformation.bank}}</div>
+</div>
+
+<div *ngIf="product.locked">
+  <h4 class="title">Bloqueada:</h4>
+  <div *ngIf="product.locked, else no">Si</div>
+  <ng-template #no>
+    <div>No</div>
+  </ng-template>
+</div>
+
+<div *ngIf="product.capacity">
+  <h4 class="title">capacidad:</h4>
+  <div>{{amount(product.capacity)}}</div>
+</div>
+
+<div *ngIf="product.productAccountBalances.saldo_canje && product.productAccountBalances.saldo_canje.amount>-1">
+  <h4 class="title">Saldo Canje:</h4>
+  <div>{{amount(product.productAccountBalances.saldo_canje.amount)}}</div>
+</div>

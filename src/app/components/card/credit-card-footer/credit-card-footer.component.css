@@ -1,0 +1,11 @@
+.pay-button {
+  width: calc(100% + 32px);
+  margin-left: -16px;
+  margin-bottom: -16px;
+  margin-top: 18px;
+  background: #1f75cd;
+}
+
+.progress {
+  margin-top: 4px;
+}

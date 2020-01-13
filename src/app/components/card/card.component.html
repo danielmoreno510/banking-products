@@ -1,0 +1,52 @@
+<mat-card [ngSwitch]="product.typeAccount" class="card">
+  <div class="icon-container">
+    <mat-icon *ngSwitchCase="'CERTIFIED_DEPOSIT_TERM'" class="icon" aria-hidden="false">block</mat-icon>
+    <mat-icon *ngSwitchCase="'CREDIT'" class="icon" aria-hidden="false">home</mat-icon>
+    <div *ngSwitchCase="'CREDIT_CARD'" class="icon" aria-hidden="false">
+      <img *ngIf="product.accountInformation.type=='VISA'" style="width: 46px" src="https://icons-for-free.com/iconfiles/png/512/payment+visa+icon-1320186079557761054.png" alt="">
+      <img *ngIf="product.accountInformation.type=='MASTERCARD'" style="width: 46px" src="https://icons-for-free.com/iconfiles/png/512/master+mastercard+methods+payment+icon-1320186065456994006.png" alt="">
+    </div>
+    <mat-icon *ngSwitchCase="'CURRENT_ACCOUNT'" class="icon" aria-hidden="false">attach_money</mat-icon>
+    <mat-icon *ngSwitchCase="'DEPOSIT_ACCOUNT'" class="icon" aria-hidden="false">attach_money</mat-icon>
+    <div class="view-more" [routerLink]="['/', product.id]" *ngIf="!detail">
+      <h4>Ver detalle</h4>
+      <mat-icon class="icon-view-more" aria-hidden="false">keyboard_arrow_right</mat-icon>
+    </div>
+  </div>
+  <h2 *ngSwitchCase="'CERTIFIED_DEPOSIT_TERM'" class="type-account">CDT</h2>
+  <h2 *ngSwitchCase="'CREDIT'" class="type-account">Crédito Hipotecario</h2>
+  <h2 *ngSwitchCase="'CREDIT_CARD'" class="type-account">Tarjeta de Crédito</h2>
+  <h2 *ngSwitchCase="'CURRENT_ACCOUNT'" class="type-account">Cuenta Corriente</h2>
+  <h2 *ngSwitchCase="'DEPOSIT_ACCOUNT'" class="type-account">Cuenta de Ahorros</h2>
+
+  <available-balance [product]='product'></available-balance>
+
+  <div [ngSwitch]="product.typeAccount">
+    <div *ngSwitchCase="'CERTIFIED_DEPOSIT_TERM'">
+      <div class="terms">
+        <div class="text">Plazo:</div>
+        <h4 class="term-count">{{product.term.count}} dias</h4>
+      </div>
+      <div class="text">Fecha de vencimiento:</div>
+      <h4 style="margin-top: 0px;">{{date(product.dueDate)}}</h4>
+    </div>
+    <div *ngSwitchCase="'CURRENT_ACCOUNT'">
+      <div class="text">Dias en sobregiro:</div>
+      <h4 style="margin-top: 0px;">{{product.overDraftDays}}</h4>
+    </div>
+  </div>
+  <div *ngSwitchCase="'DEPOSIT_ACCOUNT'" class="deposit-account">
+    <div>
+      <div class="text">En bolsillos:</div>
+      <h4 class="deposit-account" style='margin:0'>{{amount(product.productAccountBalances.saldo_canje.amount)}}</h4>
+    </div>
+    <div>
+      <div class="text">Saldo Actual:</div>
+      <h4 class="deposit-account" style='margin:0'>{{amount(product.productAccountBalances.saldo_actual.amount)}}</h4>
+    </div>
+  </div>
+  <div *ngSwitchCase="'CREDIT_CARD'">
+    <credit-card-footer [product]='product'></credit-card-footer>
+  </div>
+  <app-detail *ngIf="detail" [product]='product'></app-detail>
+</mat-card>
