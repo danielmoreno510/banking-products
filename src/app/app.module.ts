@@ -9,14 +9,12 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
-import { ProfileComponent } from './profile/profile.component';
-import { AlertsComponent } from './alerts/alerts.component';
 
 import { AuthenticationService } from './services/authentication.service';
 import { AuthEffects } from './redux/effects/auth.effects';
 import { ProductsEffects } from './redux/effects/products.effects';
 import { authReducer } from './redux/reducers/auth.reducer';
-import { ProductsReducer } from './redux/reducers/products.reducer';
+import { productsReducer } from './redux/reducers/products.reducer';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
@@ -27,9 +25,7 @@ import { HomeModule } from './home/home.module';
   declarations: [
     AppComponent,
     LoginComponent,
-    LayoutComponent,
-    ProfileComponent,
-    AlertsComponent
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +34,7 @@ import { HomeModule } from './home/home.module';
     HttpClientModule,
     MatIconModule,
     MatButtonModule,
-    StoreModule.forRoot({ auth: authReducer, products: ProductsReducer }),
+    StoreModule.forRoot({ auth: authReducer, products: productsReducer }),
     EffectsModule.forRoot([AuthEffects, ProductsEffects]),
     HomeModule
   ],

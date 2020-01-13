@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatIconModule, MatButtonModule, MatCardModule, MatProgressBarModule, MatSlideToggleModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
 
+import { CardComponent } from '../components/card/card.component';
 import { ProductDetailComponent } from './product-detail.component';
 
 describe('ProductDetailComponent', () => {
@@ -8,7 +11,15 @@ describe('ProductDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductDetailComponent ]
+      imports: [
+        MatIconModule,
+        MatButtonModule,
+        MatCardModule,
+        MatProgressBarModule,
+        MatSlideToggleModule,
+        HttpClientModule
+      ],
+      declarations: [ ProductDetailComponent, CardComponent ]
     })
     .compileComponents();
   }));

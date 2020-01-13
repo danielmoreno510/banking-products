@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatIconModule, MatButtonModule, MatCardModule, MatProgressBarModule, MatSlideToggleModule } from '@angular/material';
+
 
 import { CreditCardFooterComponent } from './credit-card-footer.component';
 
@@ -8,7 +10,16 @@ describe('CreditCardFooterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreditCardFooterComponent ]
+      imports: [
+        MatIconModule,
+        MatButtonModule,
+        MatCardModule,
+        MatProgressBarModule,
+        MatSlideToggleModule
+      ],
+      declarations: [
+        CreditCardFooterComponent
+      ]
     })
     .compileComponents();
   }));

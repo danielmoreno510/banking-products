@@ -3,7 +3,7 @@
     <!-- Menu -->
   <div [ngClass]="['menu-container', menu ? 'active' : '']">
     <div class="menu">
-      <img class="logo" src="../assets/images/adl.png" alt="" [routerLink]="['']">
+      <img class="logo" src="../assets/images/adl.png" alt="" [routerLink]="['']" (click)="closeMenu()">
       <div class="options">
         <h3>TUS PRODUCTOS</h3>
         <div class="content color-gray">

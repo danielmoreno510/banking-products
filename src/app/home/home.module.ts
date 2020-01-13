@@ -10,6 +10,8 @@ import { ProductDetailComponent } from '../product-detail/product-detail.compone
 import { DetailComponent } from '../components/card/detail/detail.component';
 
 import { AppRoutingModule } from '../app-routing.module';
+import { ProfileComponent } from '../profile/profile.component';
+import { AlertsComponent } from '../alerts/alerts.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { AppRoutingModule } from '../app-routing.module';
     CreditCardFooterComponent,
     ProductDetailComponent,
     DetailComponent,
+    ProfileComponent,
+    AlertsComponent
   ],
   imports: [
     CommonModule,

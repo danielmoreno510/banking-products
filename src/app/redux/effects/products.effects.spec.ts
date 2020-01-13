@@ -1,6 +1,7 @@
 import { TestBed, inject } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable } from 'rxjs';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ProductsEffects } from './products.effects';
 
@@ -10,6 +11,9 @@ describe('AuthEffects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [
+        HttpClientModule
+      ],
       providers: [
         ProductsEffects,
         provideMockActions(() => actions$)
