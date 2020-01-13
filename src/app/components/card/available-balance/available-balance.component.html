@@ -6,6 +6,6 @@
 <div class="amount-container">Saldo disponible:</div>
 <h2 *ngIf="product.typeAccount=='CERTIFIED_DEPOSIT_TERM'" class="amount">{{amount(product.productAccountBalances.valor_constitucion.amount)}}</h2>
 <h2 *ngIf="product.typeAccount=='CREDIT'" class="amount">No Aplica</h2>
-<h2 *ngIf="product.typeAccount=='CREDIT_CARD'" class="amount">{{amount(product.productAccountBalances.pago_total_pesos.amount)}}</h2>
+<h2 *ngIf="product.typeAccount=='CREDIT_CARD'" class="amount">{{amount(product.productAccountBalances.saldo_actual.amount)}}</h2>
 <h2 *ngIf="product.typeAccount=='CURRENT_ACCOUNT'" class="amount">{{amount(product.productAccountBalances.saldo_disponible.amount)}}</h2>
 <h2 *ngIf="product.typeAccount=='DEPOSIT_ACCOUNT'" class="amount">{{amount(product.productAccountBalances.saldo_disponible.amount)}}</h2>

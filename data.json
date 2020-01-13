@@ -198,7 +198,7 @@
       "dueDate": "2019-12-26T00:00:00",
       "productAccountBalances": {
         "pago_total_pesos": {
-          "amount": -126012.54,
+          "amount": 126012.54,
           "currencyCode": "COP"
         },
         "cupo_disponible_avances_pesos": {

@@ -18,5 +18,5 @@
     <div style="font-weight: 500">Total gastado:&nbsp;</div>
     <div style="font-weight: 500">{{amount(product.productAccountBalances.pago_total_pesos.amount)}}</div>
   </div>
-  <mat-progress-bar class="progress" mode="determinate" value="40"></mat-progress-bar>
+  <mat-progress-bar class="progress" mode="determinate" value={{product.productAccountBalances.pago_total_pesos.range}}></mat-progress-bar>
 </ng-template>

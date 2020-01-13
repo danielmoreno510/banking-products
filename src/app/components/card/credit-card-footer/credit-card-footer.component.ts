@@ -18,6 +18,11 @@ export class CreditCardFooterComponent implements OnInit {
   amount = (amount) => amountFormat(amount);
 
   ngOnInit() {
+    if (this.product.typeAccount === 'CREDIT_CARD') {
+      this.product.productAccountBalances.pago_total_pesos.range =
+        (this.product.productAccountBalances.pago_total_pesos.amount * 100) /
+        this.product.productAccountBalances.saldo_actual.amount;
+    }
   }
 
 }
