@@ -2,11 +2,11 @@
   <div class="banner">
     <div style="display: flex;">
       <div class="text">Mostrar otros productos</div>
-      <mat-slide-toggle style="padding-left:4px;"></mat-slide-toggle>
+      <mat-slide-toggle style="padding-left:4px;" (change)="moreProducts($event)"></mat-slide-toggle>
     </div>
     <mat-card class="banner-card">
       <h3>¿Como se ven tus finanzas?</h3>
     </mat-card>
   </div>
-  <card *ngFor="let product of products" [product]="product" class="card"></card>
+  <card *ngFor="let product of productsTotal" [product]="product" class="card"></card>
 </div>
