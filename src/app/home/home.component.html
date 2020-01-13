@@ -1,12 +1,14 @@
 <div class="card-container">
   <div class="banner">
-    <div style="display: flex;">
-      <div class="text">Mostrar otros productos</div>
+    <div class="show-more">
+      <div class="text-home">Mostrar otros productos</div>
       <mat-slide-toggle style="padding-left:4px;" (change)="moreProducts($event)"></mat-slide-toggle>
     </div>
     <mat-card class="banner-card">
       <h3>¿Como se ven tus finanzas?</h3>
     </mat-card>
   </div>
-  <card *ngFor="let product of productsTotal" [product]="product" class="card"></card>
+  <ng-container *ngFor="let data of products">
+    <app-card *ngFor="let product of data.data" [product]="product" [section]="data.typeAccount" class="card"></app-card>
+  </ng-container>
 </div>

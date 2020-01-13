@@ -1,42 +1,42 @@
 import { Action } from '@ngrx/store';
 
 export enum AuthActionType {
-  LoginUser = '[Auth] Login',
-  LogoutUser = '[Auth] Logout',
-  LoggedUser = '[Auth] Logged',
-  LogoutAuth = '[Auth] LogoutAuth',
-  Authentication = '[Auth] Authentication',
-  Auth = '[Auth] Auth'
+  FetchLogin = '[Auth] FetchLogin',
+  PutLogin = '[Auth] PutLogin',
+  FetchLogout = '[Auth] FetchLogout',
+  PutLogout = '[Auth] PutLogout',
+  FetchAuth = '[Auth] FetchAuth',
+  PutAuth = '[Auth] PutAuth'
 }
 
-export class LoginUser implements Action {
-  readonly type = AuthActionType.LoginUser
-  constructor() {}
-} 
-
-export class LogoutUser implements Action {
-  readonly type = AuthActionType.LogoutUser
-  constructor() {}
+export class FetchLogin implements Action {
+  readonly type = AuthActionType.FetchLogin;
+  constructor() { }
 }
 
-export class LoggedUser implements Action {
-  readonly type = AuthActionType.LoggedUser
-  constructor(public payload: any) {}
+export class FetchLogout implements Action {
+  readonly type = AuthActionType.FetchLogout;
+  constructor() { }
 }
 
-export class LogoutAuth implements Action {
-  readonly type = AuthActionType.LogoutAuth
-  constructor(public payload: any) {}
+export class PutLogin implements Action {
+  readonly type = AuthActionType.PutLogin;
+  constructor(public payload: any) { }
 }
 
-export class Authentication implements Action {
-  readonly type = AuthActionType.Authentication
-  constructor() {}
+export class PutLogout implements Action {
+  readonly type = AuthActionType.PutLogout;
+  constructor(public payload: any) { }
 }
 
-export class Auth implements Action {
-  readonly type = AuthActionType.Auth
-  constructor(public payload: any) {}
+export class FetchAuth implements Action {
+  readonly type = AuthActionType.FetchAuth;
+  constructor() { }
 }
 
-export type authActions = LoginUser | LogoutUser | LoggedUser | LogoutAuth | Authentication | Auth
+export class PutAuth implements Action {
+  readonly type = AuthActionType.PutAuth;
+  constructor(public payload: any) { }
+}
+
+export type authActions = FetchLogin | PutLogin | FetchLogout | PutLogout | FetchAuth | PutAuth;

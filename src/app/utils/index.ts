@@ -1,2 +1,2 @@
-export * from './dateFormat.util'
-export * from './amountFormat.util'
+export * from './dateFormat.util';
+export * from './amountFormat.util';

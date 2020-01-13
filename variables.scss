@@ -1,0 +1,30 @@
+$color-hover: #f9f9f9;
+$color-blue: #1f75cd;
+$text-container: 14px;
+
+$color-gray: #666666;
+.color-gray {
+  color: $color-gray;
+}
+
+$color-font: #444;
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+.card{
+  font-family: $font-family;
+  color: $color-font;
+  width: 100%
+}
+
+$font-text: 500;
+$margin-top-text: 18px;
+.text {
+  font-weight: $font-text;
+  margin-top: $margin-top-text;
+}
+
+$container-flex: flex;
+$container-align-items: center;
+.terms {
+  display: $container-flex;
+  align-items: $container-align-items;
+}

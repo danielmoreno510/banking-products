@@ -1,7 +1,9 @@
+@import '../../../../variables.scss';
+
 :host {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 14px;
-  color: #444;
+  font-family: $font-family;
+  font-size: $text-container;
+  color: $color-font;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9,7 +11,7 @@
 }
 
 h4 {
-  font-size: 13px
+  font-size: $text-container
 }
 
 .layout {
@@ -50,7 +52,7 @@ h4 {
 }
 
 .item-container:hover{
-  background: #f9f9f9;
+  background: $color-hover;
 }
 
 .item {
@@ -121,7 +123,7 @@ h4 {
 }
 
 .toolbar-item:hover {
-  background: #f9f9f9;
+  background: $color-hover;
 }
 
 .toolbar-item-center {
@@ -132,7 +134,7 @@ h4 {
 }
 
 .toolbar-item-center:hover {
-  background: #f9f9f9;
+  background: $color-hover;
 }
 
 .toolbar-item-title {

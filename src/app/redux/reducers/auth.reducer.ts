@@ -5,16 +5,17 @@ import { AuthActionType } from '../actions';
 export const initialState = {
   authentication: false
 };
- 
-const _authReducer = createReducer(initialState,
-  on(createAction(AuthActionType.Authentication)),
-  on(createAction(AuthActionType.Auth, props<{payload}>()), (state, {payload}) => payload ),
-  on(createAction(AuthActionType.LoginUser)),
-  on(createAction(AuthActionType.LogoutUser)),
-  on(createAction(AuthActionType.LoggedUser, props<{payload}>()), (state, {payload}) => payload ),
-  on(createAction(AuthActionType.LogoutAuth, props<{payload}>()), (state, {payload}) => payload )
+
+const aReducer = createReducer(
+  initialState,
+  on(createAction(AuthActionType.FetchAuth)),
+  on(createAction(AuthActionType.PutAuth, props<{ payload }>()), (state, { payload }) => payload),
+  on(createAction(AuthActionType.FetchLogin)),
+  on(createAction(AuthActionType.PutLogin, props<{ payload }>()), (state, { payload }) => payload),
+  on(createAction(AuthActionType.FetchLogout)),
+  on(createAction(AuthActionType.PutLogout, props<{ payload }>()), (state, { payload }) => payload)
 );
- 
+
 export function authReducer(state, action) {
-  return _authReducer(state, action);
+  return aReducer(state, action);
 }

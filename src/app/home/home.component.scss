@@ -1,3 +1,5 @@
+@import '../../../variables.scss';
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -7,7 +9,7 @@
 
 .card{
   width: calc(25% - 12px);
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   display: flex;
 }
 
@@ -16,36 +18,35 @@
   margin-bottom: 40px;
 }
 
+.show-more{
+  display: flex;
+  align-items: center;
+}
+
 .banner-card {
   padding: 30px;
   margin-top: 10px;
 }
 
-.text {
+.text.home {
   font-weight: 600;
-  font-size: 15px;
+  font-size: $text-container;
 }
 
 @media (max-width: 1190px) {
   .card{
     width: calc(33.333% - 12px);
-    margin-bottom: 20px;
-    display: flex;
   }
 }
 
 @media (max-width: 960px) {
   .card{
     width: calc(50% - 12px);
-    margin-bottom: 20px;
-    display: flex;
   }
 }
 
 @media (max-width: 500px) {
   .card{
     width: calc(100% - 12px);
-    margin-bottom: 20px;
-    display: flex;
   }
 }

@@ -1,21 +1,21 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { dateFormat, amountFormat } from '../../../utils'
+import { dateFormat, amountFormat } from '../../../utils';
 
 @Component({
-  selector: 'credit-card-footer',
+  selector: 'app-credit-card-footer',
   templateUrl: './credit-card-footer.component.html',
-  styleUrls: ['./credit-card-footer.component.css']
+  styleUrls: ['./credit-card-footer.component.scss']
 })
 export class CreditCardFooterComponent implements OnInit {
 
-  @Input() product
+  @Input() product;
 
   constructor() { }
 
-  date = (date) => dateFormat(date)
+  date = (date) => dateFormat(date);
 
-  amount = (amount) => amountFormat(amount)
+  amount = (amount) => amountFormat(amount);
 
   ngOnInit() {
   }

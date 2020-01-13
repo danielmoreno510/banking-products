@@ -1,4 +1,9 @@
 <mat-card [ngSwitch]="product.typeAccount" class="card">
+  <div *ngIf="product.showTitle && section=='CERTIFIED_DEPOSIT_TERM'" class="section">CDT ({{product.countTitle}})</div>
+  <div *ngIf="product.showTitle && section=='CREDIT'" class="section">Crédito Hipotecario ({{product.countTitle}})</div>
+  <div *ngIf="product.showTitle && section=='CREDIT_CARD'" class="section">Tarjeta de Crédito ({{product.countTitle}})</div>
+  <div *ngIf="product.showTitle && section=='CURRENT_ACCOUNT'" class="section">Cuenta Corriente ({{product.countTitle}})</div>
+  <div *ngIf="product.showTitle && section=='DEPOSIT_ACCOUNT'" class="section">Cuenta de Ahorros ({{product.countTitle}})</div>
   <div class="icon-container">
     <mat-icon *ngSwitchCase="'CERTIFIED_DEPOSIT_TERM'" class="icon" aria-hidden="false">block</mat-icon>
     <mat-icon *ngSwitchCase="'CREDIT'" class="icon" aria-hidden="false">home</mat-icon>
@@ -19,7 +24,7 @@
   <h2 *ngSwitchCase="'CURRENT_ACCOUNT'" class="type-account">Cuenta Corriente</h2>
   <h2 *ngSwitchCase="'DEPOSIT_ACCOUNT'" class="type-account">Cuenta de Ahorros</h2>
 
-  <available-balance [product]='product'></available-balance>
+  <app-available-balance [product]='product'></app-available-balance>
 
   <div [ngSwitch]="product.typeAccount">
     <div *ngSwitchCase="'CERTIFIED_DEPOSIT_TERM'">
@@ -46,7 +51,7 @@
     </div>
   </div>
   <div *ngSwitchCase="'CREDIT_CARD'">
-    <credit-card-footer [product]='product'></credit-card-footer>
+    <app-credit-card-footer [product]='product'></app-credit-card-footer>
   </div>
   <app-detail *ngIf="detail" [product]='product'></app-detail>
 </mat-card>

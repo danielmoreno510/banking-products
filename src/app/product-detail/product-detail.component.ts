@@ -8,27 +8,27 @@ import * as Actions from '../redux/actions';
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css']
+  styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit {
 
-  id
-  products
+  id;
+  products;
 
   constructor(private route: ActivatedRoute, private store: Store<fromRoot.ProductState>) { }
 
   product = () => {
-    this.store.pipe(select(state=>state["products"])).subscribe(data => {
-      if(data[0]){
-        this.products=data;
+    this.store.pipe(select(state => state['products'])).subscribe(data => {
+      if (data[0]) {
+        this.products = data;
       }
     });
   }
 
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get("id")
+    this.id = this.route.snapshot.paramMap.get('id');
     this.store.dispatch(new Actions.FetchProduct(this.id));
-    this.product()
+    this.product();
   }
 
 }

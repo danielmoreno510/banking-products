@@ -7,19 +7,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthenticationService {
 
-  url='http://localhost:3000/login'
+  url = 'http://localhost:3000/login';
 
   constructor(protected http: HttpClient) { }
-  
-  authentication() {
-    return this.http.get(this.url);
-  }
 
-  login() {
-    return this.http.post(this.url, { authentication:true });
-  }
+  authentication = () => this.http.get(this.url);
 
-  logout() {
-    return this.http.post(this.url, { authentication:false });
-  }
+  login = () => this.http.post(this.url, { authentication: true });
+
+  logout = () => this.http.post(this.url, { authentication: false });
 }

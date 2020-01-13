@@ -7,33 +7,31 @@ import * as Actions from './redux/actions';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  
-  authentication=false
+  authentication = false;
 
-  constructor(private store: Store<fromRoot.AuthState>) {
-  }
+  constructor(private store: Store<fromRoot.AuthState>) { }
 
   auth = () => {
     this.store.pipe(select(fromRoot.selectAuthenticate)).subscribe(auth => {
-      this.authentication=auth;
+      this.authentication = auth;
     });
   }
 
-  onLogin = () => {
-    this.store.dispatch(new Actions.LoginUser());
-    this.auth()
+  login = () => {
+    this.store.dispatch(new Actions.FetchLogin());
+    this.auth();
   }
 
-  onLogout = () => {
-    this.store.dispatch(new Actions.LogoutUser());
-    this.auth()
+  logout = () => {
+    this.store.dispatch(new Actions.FetchLogout());
+    this.auth();
   }
-  
-  ngOnInit(){
-    this.store.dispatch(new Actions.Authentication());
-    this.auth()
+
+  ngOnInit() {
+    this.store.dispatch(new Actions.FetchAuth());
+    this.auth();
   }
 }
