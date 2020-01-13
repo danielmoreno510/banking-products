@@ -1,27 +1,35 @@
-# Adl
+# ADL
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
 
-## Development server
+# Instalaciones
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Dentro del proyecto correr los siguientes comandos
 
-## Code scaffolding
+1) `npm install`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2) `npm install -g json-server`
 
-## Build
+# Correr Proyecto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Comandos para correr proyecto
 
-## Running unit tests
+1) `ng serve`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2) `json-server --watch data.json`
 
-## Running end-to-end tests
+3) abrir `http://localhost:4200/`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Imagenes
 
-## Further help
+1) Pantalla Principal
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![alt text](https://github.com/danielmoreno510/banking-products/blob/master/images/1.png)
+
+2) Productos de otros bancos
+
+![alt text](https://github.com/danielmoreno510/banking-products/blob/master/images/2.png)
+
+3) Responsive
+
+![alt text](https://github.com/danielmoreno510/banking-products/blob/master/images/3.png)
