@@ -25,5 +25,7 @@ export class AvailableBalanceComponent implements OnInit {
     return format;
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
+
 }
